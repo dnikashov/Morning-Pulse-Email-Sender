@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- Load Roboto Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #FFF8E1; /* Pale orange color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px; /* Increased width to accommodate side-by-side inputs */
+            width: 100%;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .logo {
+            width: 350px; 
+        }
+
+        h1 {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .flash-messages {
+            margin-bottom: 20px;
+            color: #ff3333; /* Red color for error messages */
+            font-weight: 500;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: stretch; /* Ensure the form takes full width */
+        }
+
+        label {
+            font-weight: 500;
+            color: #555;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="time"] {
+            padding: 10px 5px;
+            border: none;
+            border-bottom: 2px solid #ddd; /* Only a bottom border */
+            font-size: 16px;
+            height: 40px; /* Set consistent height */
+            box-sizing: border-box;
+            background-color: white; /* White background for input fields */
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="time"]:focus {
+            outline: none;
+            border-bottom: 2px solid #FF8C00; /* Highlighted bottom border on focus */
+        }
+
+        .flex-row {
+            display: flex;
+            gap: 15px; /* Space between Work Address and Arrival Time */
+        }
+
+        .input-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #FF8C00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            /* Responsive adjustments for smaller screens */
+            .flex-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <img src="{{ url_for('static', filename='Morning_Pulse_Logo.png') }}" alt="Logo" class="logo">
+        
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="flash-messages">
+              {% for message in messages %}
+                <p>{{ message }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <!-- Form Fields -->
+        <form action="/" method="post">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="youremail@gmail.com" required>
+
+            <label for="home_address">Home Address:</label>
+            <input type="text" id="home_address" name="home_address" placeholder="123 Main St, Apt 4" required>
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" placeholder="CA" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="Toronto" required>
+
+            <div class="flex-row">
+                <div class="input-group">
+                    <label for="work_address">Work Address:</label>
+                    <input type="text" id="work_address" name="work_address" placeholder="456 Office Rd, Suite 300" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="arrival_time">Arrival Time:</label>
+                    <input type="time" id="arrival_time" name="arrival_time" required>
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- email_template.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morning Pulse Daily Update</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; line-height: 1.6; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h1 { color: #FFA726; }
+        p { margin: 10px 0; }
+        .unsubscribe { font-size: 12px; color: #666; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Good Morning!</h1>
+        <p>Welcome to your personalized Morning Pulse update.</p>
+        <p>In {{ city }}, {{ weather_message }}</p>
+        <p>{{ drive_message }}</p>
+        <p>Have a wonderful day ahead!</p>
+
+        <!-- Unsubscribe Link -->
+        <p class="unsubscribe">
+            If you would like to unsubscribe, <a href="{{ unsubscribe_link }}">click here</a>.
+        </p>
+    </div>
+</body>
+</html>
