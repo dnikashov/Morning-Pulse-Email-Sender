@@ -1,6 +1,5 @@
-![Logo](Morning_Emailer copy/static/Morning_Pulse_Logo.png)
 <p align="center">
-  <img src="Morning_Emailer copy/static/Morning_Pulse_Logo.png" alt="Logo" width="200" height="200">
+  <img src="Morning_Emailer copy/static/Morning_Pulse_Logo.png" alt="Logo" width="500" height="500">
 </p>
 
 Welcome to my project! This application is designed to...
