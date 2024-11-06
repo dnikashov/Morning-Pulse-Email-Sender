@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Morning_Emailer copy/static/Morning_Pulse_Logo.png" alt="Logo" width="500" height="500">
+  <img src="Morning_Emailer copy/static/Morning_Pulse_Logo.png" alt="Logo">
 </p>
 
 Welcome to my project! This application is designed to...
