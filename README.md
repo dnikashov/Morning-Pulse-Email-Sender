@@ -2,6 +2,8 @@
   <img src="Morning_Emailer copy/static/Morning_Pulse_Logo.png" alt="Logo" width="459" height="301">
 </p>
 
+Access at https://dnikashov.pythonanywhere.com/
+
 ## About Morning Pulse
 
 **Morning Pulse** is an automated email service that delivers personalized daily emails to subscribed users. These emails contain real-time updates on traffic and weather, using information from Google Maps and OpenWeather APIs to provide a tailored experience. The application runs on PythonAnywhere, with a Flask-based web interface that allows users to easily subscribe or unsubscribe.
